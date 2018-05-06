@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartViewController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartViewController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="1.0" layoutY="25.0" prefHeight="375.0" prefWidth="600.0" style="-fx-background-color: #DDDDE2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -48,6 +49,9 @@
                      <effect>
                         <DropShadow color="#00000094" height="12.14" offsetY="2.0" radius="5.57" spread="0.13" width="12.14" />
                      </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="allowRemoteBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#allowRemotePressed" prefHeight="80.0" prefWidth="330.0" style="-fx-background-color: #191919; -fx-background-radius: 10; -fx-border-color: #5B5B5B; -fx-border-radius: 10;" text="ALLOW REMOTE CONTROL" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
@@ -56,6 +60,9 @@
                      <effect>
                         <DropShadow color="#45454594" height="12.14" offsetY="2.0" radius="5.57" spread="0.13" width="12.14" />
                      </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
             </VBox>
