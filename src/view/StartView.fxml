@@ -39,9 +39,9 @@
                         <Font name="Proxima Nova Alt Light" size="13.0" />
                      </font>
                   </Label>
-                  <Button fx:id="controlRemoteBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#controlRemotePressed" prefHeight="80.0" prefWidth="330.0" style="-fx-background-color: #8DA6C0; -fx-background-radius: 10; -fx-border-color: #74899F; -fx-border-radius: 10;" text="CONTROL REMOTE PC" textAlignment="CENTER" textFill="#191919" wrapText="true">
+                  <Button fx:id="controlRemoteBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#controlRemotePressed" onMouseEntered="#controlRemoteBtnHover" onMouseExited="#controlRemoteBtnExitHover" prefHeight="80.0" prefWidth="330.0" style="-fx-background-color: #8DA6C0; -fx-background-radius: 10; -fx-border-color: #74899F; -fx-border-radius: 10;" text="CONTROL REMOTE PC" textAlignment="CENTER" textFill="#191919" wrapText="true">
                      <font>
-                        <Font name="Proxima Nova Bold" size="23.0" />
+                        <Font name="SF Compact Text Medium" size="24.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="15.0" />
@@ -53,9 +53,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="allowRemoteBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#allowRemotePressed" prefHeight="80.0" prefWidth="330.0" style="-fx-background-color: #191919; -fx-background-radius: 10; -fx-border-color: #5B5B5B; -fx-border-radius: 10;" text="ALLOW REMOTE CONTROL" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button fx:id="allowRemoteBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#allowRemotePressed" onMouseEntered="#allowRemoteBtnHover" onMouseExited="#allowRemoteBtnExitHover" prefHeight="80.0" prefWidth="330.0" style="-fx-background-color: #191919; -fx-background-radius: 10; -fx-border-color: #5B5B5B; -fx-border-radius: 10;" text="ALLOW REMOTE CONTROL" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
-                        <Font name="Proxima Nova Bold" size="23.0" />
+                        <Font name="SF Compact Text Medium" size="24.0" />
                      </font>
                      <effect>
                         <DropShadow color="#45454594" height="12.14" offsetY="2.0" radius="5.57" spread="0.13" width="12.14" />
@@ -66,7 +66,7 @@
                   </Button>
                </children>
             </VBox>
-            <Label text="© 2018 PeerView, inc. All Rights Reserved." />
+            <Label text="© 2018 PeerView Inc. All Rights Reserved." />
          </children>
          <opaqueInsets>
             <Insets />
