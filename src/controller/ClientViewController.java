@@ -7,9 +7,13 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.Client.ClientSocket;
 
 /**
  * FXML Controller class
@@ -20,6 +24,10 @@ public class ClientViewController implements Initializable {
 
     @FXML
     private AnchorPane rootPane;
+    @FXML
+    private Button submitBtn;
+    @FXML
+    private TextField ipAddressTextField;
 
     /**
      * Initializes the controller class.
@@ -28,5 +36,19 @@ public class ClientViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void submitBtnPressed(ActionEvent event) {
+        
+        String serverIp = ipAddressTextField.getText();
+        
+        ClientSocket clientSocket = new ClientSocket(serverIp);
+        System.out.println(serverIp);
+        
+        if(clientSocket.correctIP == true) {
+            // Show 'Enter password field in GUI'
+            System.out.println("Established connection");
+        }
+    }
     
 }

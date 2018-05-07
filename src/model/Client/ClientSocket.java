@@ -1,4 +1,4 @@
-package Client;
+package model.Client;
 
 import java.net.Socket;
 
@@ -8,9 +8,11 @@ import java.io.IOException;
 
 
 
-class ClientSocket {
+public class ClientSocket {
 
     private static ClientSocket instance = null;
+    
+    public boolean correctIP = false;
 
     private Integer port = 4907;
 
@@ -18,12 +20,14 @@ class ClientSocket {
     private DataInputStream inputStream;
     private DataOutputStream outputStream;
 
-    private ClientSocket (String serverIp) {
+    public ClientSocket (String serverIp) {
         try {
             socket = new Socket(serverIp, port);
             inputStream = new DataInputStream(socket.getInputStream());
             outputStream = new DataOutputStream(socket.getOutputStream());
+            correctIP = true;
         } catch (IOException e) {
+            System.out.println("Failed connection.");
         }
 
     }

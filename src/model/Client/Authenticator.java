@@ -1,4 +1,4 @@
-package Client;
+package model.Client;
 
 class Authenticator {
 
