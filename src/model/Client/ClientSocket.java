@@ -12,7 +12,7 @@ public class ClientSocket {
 
     private static ClientSocket instance = null;
     
-    public boolean correctIP = false;
+    public static boolean correctIP = false;
 
     private Integer port = 4907;
 
@@ -20,7 +20,7 @@ public class ClientSocket {
     private DataInputStream inputStream;
     private DataOutputStream outputStream;
 
-    public ClientSocket (String serverIp) {
+    private ClientSocket (String serverIp) {
         try {
             socket = new Socket(serverIp, port);
             inputStream = new DataInputStream(socket.getInputStream());
@@ -46,6 +46,7 @@ public class ClientSocket {
 
         }
     }
+    
     public String getMessage() {
         try {
             return inputStream.readUTF();

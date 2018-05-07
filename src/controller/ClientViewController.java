@@ -42,11 +42,11 @@ public class ClientViewController implements Initializable {
         
         String serverIp = ipAddressTextField.getText();
         
-        ClientSocket clientSocket = new ClientSocket(serverIp);
+        ClientSocket.getInstance(serverIp);
         System.out.println(serverIp);
         
-        if(clientSocket.correctIP == true) {
-            // Show 'Enter password field in GUI'
+        if(ClientSocket.correctIP == true) {
+            // TO DO Show 'Enter password field in GUI'
             System.out.println("Established connection");
         }
     }
