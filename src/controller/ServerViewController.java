@@ -62,13 +62,12 @@ public class ServerViewController implements Initializable {
         String password = passwordTextField.getText();
         System.out.println("Password is " + password);
         
-        if (password.length() != 0) {
-        
+       
+        ConnectionInitiator.getInstance(password).initiateConnection();
             //Awaiting Client connection.
-            AnchorPane pane = FXMLLoader.load(ServerViewController.this.getClass().getResource("/view/ScreenView.fxml"));
-            rootPane.getChildren().setAll(pane);
+        AnchorPane pane = FXMLLoader.load(ServerViewController.this.getClass().getResource("/view/ScreenView.fxml"));
+        rootPane.getChildren().setAll(pane);
             
-            connectionInitiator = new Server.ConnectionInitiator(password);
-        }
+         
     }
 }
