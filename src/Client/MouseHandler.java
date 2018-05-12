@@ -8,27 +8,27 @@ import java.io.PrintWriter;
 public class MouseHandler implements MouseListener, MouseMotionListener {
 
     private ClientSocket socket = null;
-    private JPanel panel;
-    private int widthServer,heightServer;
-    MouseHandler(JPanel panel , int widthServer , int heightServer) throws Exception
+    
+    private double widthServer,heightServer,widthClient,heightClient;
+    MouseHandler( double widthClient , double heightClient ,double widthServer , double heightServer) throws Exception
     {
         this.socket = ClientSocket.getInstance();
-        this.panel = panel;
         this.widthServer = widthServer;
         this.heightServer = heightServer;
-        panel.addMouseListener(this);
+        this.widthClient = widthClient;
+        this.heightClient = heightClient;
     }
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
-        double newX = (double)widthServer/panel.getWidth() * mouseEvent.getX();
-        double newY = (double)heightServer/panel.getHeight() * mouseEvent.getY();
-        socket.sendMessage("mouseMoved");
+        double newX = (double)widthServer/widthClient * mouseEvent.getX();
+        double newY = (double)heightServer/heightClient * mouseEvent.getY();
+        socket.sendMessage("MV");
         socket.sendMessage(Double.toString(newX));
         socket.sendMessage(Double.toString(newY));
     }
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
-        socket.sendMessage("mousePressed");
+        socket.sendMessage("MP");
         socket.sendMessage(Integer.toString( mouseEvent.getButton()));
     }
     @Override
@@ -44,15 +44,10 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
     public void mouseDragged(MouseEvent mouseEvent) {
 
     }
-
-
-
-
     @Override
     public void mouseEntered(MouseEvent mouseEvent) {
 
     }
-
     @Override
     public void mouseExited(MouseEvent mouseEvent) {
 

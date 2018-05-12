@@ -7,13 +7,14 @@ public class EventSender {
 
     private ClientSocket socket ;
     private JPanel panel;
-    private int widthServer,heightServer;
+    private double widthServer,heightServer;
     private MouseHandler mouseHandler = null;
-    EventSender(JPanel panel , int width , int height) throws Exception {
+    EventSender(JPanel panel ,double widthClient , double heightClient , double widthServer , double heightServer) throws Exception {
         this.socket = ClientSocket.getInstance();
         this.panel = panel;
         this.widthServer = widthServer;
         this.heightServer = heightServer;
-        mouseHandler = new MouseHandler(panel,width,heightServer);
+        panel.addMouseListener(new MouseHandler(widthClient,heightClient,widthServer,heightServer));
+        panel.addKeyListener(new KeyboardHandler());
     }
 }
