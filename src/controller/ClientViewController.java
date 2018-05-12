@@ -45,9 +45,11 @@ public class ClientViewController implements Initializable {
         ClientSocket.getInstance(serverIp);
         System.out.println(serverIp);
         
+        
         if(ClientSocket.correctIP == true) {
-            // TO DO Show 'Enter password field in GUI'
             System.out.println("Established connection");
+        } else {
+            System.out.println("Failed to connect");
         }
     }
     
