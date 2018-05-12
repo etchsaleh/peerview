@@ -7,9 +7,9 @@ public class EventSender {
 
     private ClientSocket socket ;
     private JPanel panel;
-    private int widthServer,heightServer;
+    private double widthServer,heightServer;
     private MouseHandler mouseHandler = null;
-    EventSender(JPanel panel , int width , int height) throws Exception {
+    EventSender(JPanel panel , double width , double height) throws Exception {
         this.socket = ClientSocket.getInstance();
         this.panel = panel;
         this.widthServer = widthServer;

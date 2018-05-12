@@ -1,31 +1,4 @@
-<<<<<<< HEAD
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
-
-/**
- * FXML Controller class
- *
- * @author HeshamSaleh
- */
-public class ScreenViewController implements Initializable {
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
-}
-=======
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -53,4 +26,3 @@ public class ScreenViewController implements Initializable {
     }    
     
 }
->>>>>>> 46c461cb005519b59176eca6b9f096e6138d3a64
