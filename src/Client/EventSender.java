@@ -1,4 +1,4 @@
-package model.Client;
+package Client;
 
 import javax.swing.*;
 import java.net.Socket;
