@@ -35,6 +35,22 @@
                         <Font size="33.0" />
                      </font>
                   </TextField>
+                  <Label alignment="CENTER" text="ENTER PASSWORD">
+                     <font>
+                        <Font name="Proxima Nova Alt Light" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="serverPasswordField" alignment="CENTER" prefHeight="65.0" prefWidth="320.0" promptText="eg. ********" style="-fx-background-radius: 10; -fx-background-color: #DDDDE2; -fx-border-radius: 10; -fx-border-color: #A0A1A4;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="140.0" right="140.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </TextField>
                   <Button fx:id="submitBtn" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#submitBtnPressed" prefHeight="45.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="SUBMIT" textAlignment="CENTER" wrapText="true">
                      <VBox.margin>
                         <Insets top="5.0" />
