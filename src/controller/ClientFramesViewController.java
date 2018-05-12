@@ -43,6 +43,7 @@ public class ClientFramesViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        System.out.print("hola");
         Image image = new Image(ClientFramesViewController.class.getResourceAsStream("smile.jpg"));
         try{
             imageView.setImage(image);
@@ -50,22 +51,22 @@ public class ClientFramesViewController implements Initializable {
             System.out.print(ex);
         }
         
-        try {
-        
-            GraphicsEnvironment gEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            GraphicsDevice gDev = gEnv.getDefaultScreenDevice();
-
-            Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-
-            Socket socket = new Socket();
-            Rectangle rect = new Rectangle(dim);
-            Robot robot = new Robot(gDev);
-            
-            
-        
-        } catch (Exception ex) {
-            
-        }
+//        try {
+//        
+//            GraphicsEnvironment gEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
+//            GraphicsDevice gDev = gEnv.getDefaultScreenDevice();
+//
+//            Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+//
+//            Socket socket = new Socket();
+//            Rectangle rect = new Rectangle(dim);
+//            Robot robot = new Robot(gDev);
+//            
+//            
+//        
+//        } catch (Exception ex) {
+//            
+//        }
         
         
     }    
