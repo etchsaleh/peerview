@@ -18,13 +18,8 @@ public class Authenticator {
         this.socket = socket;
     }
          
-    public Boolean Authenticate () { 
+    public Boolean isValid () {
        String inputPassword = socket.getMessage();
-       while(!ServerPassword.equals(inputPassword)) {
-           socket.sendMessage("invalid");
-           inputPassword = socket.getMessage();
-       }
-       socket.sendMessage("valid");
-       return true;
+       return ServerPassword.equals(inputPassword);
     }
 }
