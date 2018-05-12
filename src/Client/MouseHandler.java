@@ -9,8 +9,8 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
 
     private ClientSocket socket = null;
     private JPanel panel;
-    private int widthServer,heightServer;
-    MouseHandler(JPanel panel , int widthServer , int heightServer) throws Exception
+    private double widthServer,heightServer;
+    MouseHandler(JPanel panel , double widthServer , double heightServer) throws Exception
     {
         this.socket = ClientSocket.getInstance();
         this.panel = panel;

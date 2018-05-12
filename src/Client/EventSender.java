@@ -14,6 +14,6 @@ public class EventSender {
         this.panel = panel;
         this.widthServer = widthServer;
         this.heightServer = heightServer;
-        mouseHandler = new MouseHandler(panel,width,heightServer);
+        mouseHandler = new MouseHandler(panel,widthServer,heightServer);
     }
 }
