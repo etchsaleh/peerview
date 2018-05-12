@@ -22,13 +22,13 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
     public void mouseMoved(MouseEvent mouseEvent) {
         double newX = (double)widthServer/panel.getWidth() * mouseEvent.getX();
         double newY = (double)heightServer/panel.getHeight() * mouseEvent.getY();
-        socket.sendMessage("mouseMoved");
+        socket.sendMessage("MV");
         socket.sendMessage(Double.toString(newX));
         socket.sendMessage(Double.toString(newY));
     }
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
-        socket.sendMessage("mousePressed");
+        socket.sendMessage("MP");
         socket.sendMessage(Integer.toString( mouseEvent.getButton()));
     }
     @Override
@@ -44,10 +44,6 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
     public void mouseDragged(MouseEvent mouseEvent) {
 
     }
-
-
-
-
     @Override
     public void mouseEntered(MouseEvent mouseEvent) {
 
