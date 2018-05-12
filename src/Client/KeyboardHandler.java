@@ -8,11 +8,8 @@ import java.net.Socket;
 public class KeyboardHandler implements KeyListener {
 
     private ClientSocket socket = null;
-    private JPanel panel;
-    KeyboardHandler(JPanel panel ) throws Exception {
+    KeyboardHandler() throws Exception {
         this.socket = ClientSocket.getInstance();
-        this.panel = panel;
-        panel.addKeyListener(this);
     }
 
     @Override
