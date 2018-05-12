@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="PeerView.jar" size="16794" download="eager" />
+=======
+    <jar href="PeerView.jar" size="33213" download="eager" />
+>>>>>>> 5b6db9236bdd62d0972b8bda6f43a7baf6ad37fc
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="PeerView" >
     <param name="requiredFXVersion" value="8.0+"/>
