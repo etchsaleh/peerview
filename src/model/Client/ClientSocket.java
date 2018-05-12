@@ -1,12 +1,11 @@
-package Client;
+package model.Client;
 
+import java.io.PrintWriter;
 import java.net.Socket;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-
-
 
 class ClientSocket {
 
@@ -25,12 +24,17 @@ class ClientSocket {
             outputStream = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {
         }
-
     }
 
     public static ClientSocket getInstance (String serverIp) {
         if (instance == null) {
             instance = new ClientSocket(serverIp);
+        }
+        return instance;
+    }
+    public static ClientSocket getInstance ()throws Exception {
+        if (instance == null) {
+            throw new Exception("NOT FOUND");
         }
         return instance;
     }
