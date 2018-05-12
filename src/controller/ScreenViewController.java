@@ -15,7 +15,6 @@ import javafx.fxml.Initializable;
  * @author HeshamSaleh
  */
 public class ScreenViewController implements Initializable {
-
     /**
      * Initializes the controller class.
      */

@@ -5,20 +5,27 @@
  */
 package Server;
 
-/**
- *
- * @author omarkhaled
- */
+
 public class ConnectionInitiator {
-    private ServerSocket sck;
+
+    private ServerSocket socket;
     private String serverPassword;
+
     public ConnectionInitiator(String serverPassword) {
-        sck = new ServerSocket();
+        socket = new ServerSocket();
         this.serverPassword = serverPassword;
     }
-    
-    public void initiateConnection() {
+
+    public Boolean initiateConnection() {
         
+        Authenticator auth = new Authenticator(socket, serverPassword);
+        System.out.print("ServerPassword" + serverPassword);
+        while(!auth.isValid()) {
+            socket.sendMessage("invalid");
+        }
+        
+        socket.sendMessage("valid");
+        return true;
     }
     
    

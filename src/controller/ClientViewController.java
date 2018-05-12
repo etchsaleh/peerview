@@ -43,18 +43,19 @@ public class ClientViewController implements Initializable {
     @FXML
     private void submitBtnPressed(ActionEvent event) throws IOException {
         
-//        String serverIp = ipAddressTextField.getText();
-//        
-//        ClientSocket.getInstance(serverIp);
-//        System.out.println(serverIp);
-//        
-//        if(ClientSocket.correctIP == true) {
-//            // TO DO Show 'Enter password field in GUI'
-//            System.out.println("Established connection");
-//        }
 
         AnchorPane pane = FXMLLoader.load(ClientViewController.this.getClass().getResource("/view/ClientFramesView.fxml"));
         rootPane.getChildren().setAll(pane);
+        
+//        ClientSocket.getInstance(serverIp);
+//        System.out.println(serverIp);
+//        
+//        
+//        if(ClientSocket.correctIP == true) {
+//            System.out.println("Established connection");
+//        } else {
+//            System.out.println("Failed to connect");
+//        }
     }
     
 }
