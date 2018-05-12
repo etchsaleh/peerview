@@ -24,23 +24,24 @@ public class ReceiveEvents extends Thread {
         Scanner scanner = null;
 	try {
             scanner = new Scanner(socket.getInputStream());
+            int param1 = Integer.parseInt(scanner.next());
             while(continueLoop){
                 String command = scanner.next();
                 switch (command) {
                         case "MP":
-                            robot.mousePress(scanner.nextInt());
+                            robot.mousePress(param1);
                             break;
                         case "MR":
-                            robot.mouseRelease(scanner.nextInt());
+                            robot.mouseRelease(param1);
                             break;
                         case "MM":
-                            robot.mouseMove(scanner.nextInt(),scanner.nextInt());
+                            robot.mouseMove(param1,Integer.parseInt(scanner.next()));
                             break;
                         case "KP":
-                            robot.keyPress(scanner.nextInt());
+                            robot.keyPress(param1);
                             break;
                         case "KR":
-                            robot.keyRelease(scanner.nextInt());
+                            robot.keyRelease(param1);
                             break;
                             }
                     }
