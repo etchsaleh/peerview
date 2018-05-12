@@ -48,6 +48,7 @@ public class ServerViewController implements Initializable {
         try {
             String ipAddress = InetAddress.getLocalHost().getHostAddress();
             ipAddressLbl.setText(ipAddress);
+            System.out.print(ipAddressLbl);
         } catch (UnknownHostException ex) {
             Logger.getLogger(ServerViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -62,5 +63,4 @@ public class ServerViewController implements Initializable {
         AnchorPane pane = FXMLLoader.load(ServerViewController.this.getClass().getResource("/view/ScreenView.fxml"));
         rootPane.getChildren().setAll(pane);
     }
-
 }
