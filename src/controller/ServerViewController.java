@@ -5,6 +5,7 @@
  */
 package controller;
 
+import Server.ConnectionInitiator;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;

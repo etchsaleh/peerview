@@ -27,7 +27,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField alignment="CENTER" prefHeight="65.0" prefWidth="320.0" promptText="eg. 192.168.1.2" style="-fx-background-radius: 10; -fx-background-color: #DDDDE2; -fx-border-radius: 10; -fx-border-color: #A0A1A4;">
+                  <TextField fx:id="ipAddressTextField" alignment="CENTER" prefHeight="65.0" prefWidth="320.0" promptText="eg. 192.168.1.2" style="-fx-background-radius: 10; -fx-background-color: #DDDDE2; -fx-border-radius: 10; -fx-border-color: #A0A1A4;">
                      <VBox.margin>
                         <Insets bottom="10.0" left="140.0" right="140.0" />
                      </VBox.margin>
@@ -35,7 +35,7 @@
                         <Font size="33.0" />
                      </font>
                   </TextField>
-                  <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="SUBMIT" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="submitBtn" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#submitBtnPressed" prefHeight="45.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="SUBMIT" textAlignment="CENTER" wrapText="true">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
