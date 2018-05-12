@@ -8,15 +8,13 @@ package Server;
 
 public class ConnectionInitiator {
 
-    
     private static ConnectionInitiator instance = null;
     private ServerSocket socket;
     private String serverPassword;
     private Boolean connected = false;
-    
  
     private ConnectionInitiator(String serverPassword) {
-        socket = new ServerSocket();
+        socket = ServerSocket.getInstance();
         this.serverPassword = serverPassword;
     }
     
@@ -29,7 +27,6 @@ public class ConnectionInitiator {
     }
     
     public static ConnectionInitiator getInstance () {
-        
         return instance;
     }
     

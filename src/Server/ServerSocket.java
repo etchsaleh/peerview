@@ -5,10 +5,13 @@
  */
 package Server;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.net.Socket;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import javax.imageio.ImageIO;
 //import java.net.ServerSocket;
 
 
@@ -26,7 +29,7 @@ public class ServerSocket {
     private DataInputStream inputStream;
     private DataOutputStream outputStream;
 
-    public ServerSocket() {
+    private ServerSocket() {
         try {
             System.out.println("Waiting for Accept");
             socket = new java.net.ServerSocket(port).accept();
@@ -37,6 +40,13 @@ public class ServerSocket {
             System.out.println("Failed connection.");
         }
     }
+    
+    public static ServerSocket getInstance (){
+        if (instance == null) {
+            instance = new ServerSocket();
+        }
+        return instance;
+    }
 
     public void sendMessage(String message) {
         try {
@@ -44,10 +54,34 @@ public class ServerSocket {
         } catch (IOException e) {
         }
     }
+    
+    public void sendImage(BufferedImage image) {
+        try {
+            ImageIO.write(image, "png", socket.getOutputStream());
+        } catch (IOException e) {
+            
+        }
+    }
 
     public String getMessage() {
         try {
             return inputStream.readUTF();
+        } catch (IOException e) {
+            return null;
+        }
+    }
+    
+    public BufferedImage getImage() {
+        try {
+            byte[] bytes = new byte[1024 * 1024];
+            int count = 0;
+            do {
+		count+= socket.getInputStream().read(bytes, count, bytes.length - count);
+            } while(!(count > 4 && bytes[count - 2] == (byte) - 1 && bytes[count - 1] == (byte) - 39));
+            
+            BufferedImage image = ImageIO.read(new ByteArrayInputStream(bytes));
+            
+            return image;
         } catch (IOException e) {
             return null;
         }
