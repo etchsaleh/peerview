@@ -1,49 +1,45 @@
-package model.Client;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Server;
 
 import java.net.Socket;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+//import java.net.ServerSocket;
 
 
 
-public class ClientSocket {
-
-    private static ClientSocket instance = null;
-    
-    public static boolean correctIP = false;
-
-    private Integer port = 4907;
+/**
+ *
+ * @author omarkhaled
+ */
+public class ServerSocket {
+    private static ServerSocket instance = null;
+  
+    private int port = 4907;
 
     private Socket socket;
     private DataInputStream inputStream;
     private DataOutputStream outputStream;
 
-    private ClientSocket (String serverIp) {
+    public ServerSocket () {
         try {
-            socket = new Socket(serverIp, port);
+            socket = new java.net.ServerSocket(port).accept();
             inputStream = new DataInputStream(socket.getInputStream());
             outputStream = new DataOutputStream(socket.getOutputStream());
-            correctIP = true;
         } catch (IOException e) {
             System.out.println("Failed connection.");
         }
-
     }
-
-    public static ClientSocket getInstance (String serverIp) {
-        if (instance == null) {
-            instance = new ClientSocket(serverIp);
-        }
-        return instance;
-    }
-
+    
     public void sendMessage(String message) {
         try {
             outputStream.writeUTF(message);
         } catch (IOException e) {
-
         }
     }
     
@@ -54,4 +50,6 @@ public class ClientSocket {
             return null;
         }
     }
+  
+   
 }

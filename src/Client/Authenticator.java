@@ -1,4 +1,4 @@
-package model.Client;
+package Client;
 
 class Authenticator {
 
@@ -8,7 +8,7 @@ class Authenticator {
     private Authenticator (ClientSocket socket) {
         this.socket = socket;
     }
-
+    
     public static Authenticator getInstance (ClientSocket socket) {
         if (instance == null) {
             instance = new Authenticator(socket);
