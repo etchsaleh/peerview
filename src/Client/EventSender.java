@@ -9,11 +9,12 @@ public class EventSender {
     private JPanel panel;
     private double widthServer,heightServer;
     private MouseHandler mouseHandler = null;
-    EventSender(JPanel panel , double width , double height) throws Exception {
+    EventSender(JPanel panel ,double widthClient , double heightClient , double widthServer , double heightServer) throws Exception {
         this.socket = ClientSocket.getInstance();
         this.panel = panel;
         this.widthServer = widthServer;
         this.heightServer = heightServer;
-        mouseHandler = new MouseHandler(panel,widthServer,heightServer);
+        panel.addMouseListener(new MouseHandler(widthClient,heightClient,widthServer,heightServer));
+        panel.addKeyListener(new KeyboardHandler());
     }
 }
