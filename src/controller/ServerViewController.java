@@ -37,6 +37,9 @@ public class ServerViewController implements Initializable {
     private Label ipAddressLbl;
     @FXML
     private AnchorPane rootPane;
+    
+    public Server.ConnectionInitiator connectionInitiator;
+    
 
     /**
      * Initializes the controller class.
@@ -48,6 +51,7 @@ public class ServerViewController implements Initializable {
         try {
             String ipAddress = InetAddress.getLocalHost().getHostAddress();
             ipAddressLbl.setText(ipAddress);
+            System.out.print(ipAddressLbl);
         } catch (UnknownHostException ex) {
             Logger.getLogger(ServerViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -58,9 +62,12 @@ public class ServerViewController implements Initializable {
         String password = passwordTextField.getText();
         System.out.println("Password is " + password);
         
-        //Awaiting Client connection.
+       
+        ConnectionInitiator.getInstance(password).initiateConnection();
+            //Awaiting Client connection.
         AnchorPane pane = FXMLLoader.load(ServerViewController.this.getClass().getResource("/view/ScreenView.fxml"));
         rootPane.getChildren().setAll(pane);
+            
+         
     }
-
 }

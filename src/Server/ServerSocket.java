@@ -19,30 +19,32 @@ import java.io.IOException;
  */
 public class ServerSocket {
     private static ServerSocket instance = null;
-  
+
     private int port = 4907;
 
     private Socket socket;
     private DataInputStream inputStream;
     private DataOutputStream outputStream;
 
-    public ServerSocket () {
+    public ServerSocket() {
         try {
+            System.out.println("Waiting for Accept");
             socket = new java.net.ServerSocket(port).accept();
+            System.out.println("Accept finished");
             inputStream = new DataInputStream(socket.getInputStream());
             outputStream = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {
             System.out.println("Failed connection.");
         }
     }
-    
+
     public void sendMessage(String message) {
         try {
             outputStream.writeUTF(message);
         } catch (IOException e) {
         }
     }
-    
+
     public String getMessage() {
         try {
             return inputStream.readUTF();
@@ -50,6 +52,4 @@ public class ServerSocket {
             return null;
         }
     }
-  
-   
 }
