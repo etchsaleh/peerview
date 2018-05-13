@@ -14,7 +14,7 @@ public class ConnectionInitiator {
     private Boolean connected = false;
  
     private ConnectionInitiator(String serverPassword) {
-        socket = ServerSocket.getInstance();
+        System.out.println("password");
         this.serverPassword = serverPassword;
     }
     
@@ -31,6 +31,7 @@ public class ConnectionInitiator {
     
 
     public void initiateConnection() {
+        socket = ServerSocket.getInstance();
         Authenticator auth = new Authenticator(socket, serverPassword);
         System.out.print("ServerPassword" + serverPassword);
         while(!auth.isValid()) {

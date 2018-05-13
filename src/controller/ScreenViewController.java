@@ -9,6 +9,7 @@ package controller;
 import Server.ConnectionInitiator;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executors;
 import javafx.fxml.Initializable;
 
 /**
@@ -22,11 +23,17 @@ public class ScreenViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       ConnectionInitiator connectInit = ConnectionInitiator.getInstance();
-       while (!connectInit.isConnected()) {
-       }
-       System.out.println("Server Says Connected");
-       
-    }    
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                ConnectionInitiator connectInit = ConnectionInitiator.getInstance();
+                connectInit.initiateConnection();
+ 
+            }
+        });
+        System.out.println("After Blocking");
+    } 
+    
+    
     
 }

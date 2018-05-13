@@ -36,8 +36,8 @@ public class ServerSocket {
             System.out.println("Accept finished");
             inputStream = new DataInputStream(socket.getInputStream());
             outputStream = new DataOutputStream(socket.getOutputStream());
-        } catch (IOException e) {
-            System.out.println("Failed connection.");
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
     

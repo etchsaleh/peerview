@@ -64,11 +64,6 @@ public class ClientFramesViewController implements Initializable {
         
         //TO DO: redesign the ClientFramesView.fxml
         
-        
-        
-        
-        
-        
         //recieve buffered image, new instance of reci frame set image(image) and send imageview
         //        try {
         //
