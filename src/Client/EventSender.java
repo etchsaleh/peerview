@@ -5,7 +5,7 @@ import java.net.Socket;
 
 public class EventSender {
 
-    private ClientSocket socket ;
+    private ClientSocket socket;
     private JPanel panel;
     private double widthServer,heightServer;
     private MouseHandler mouseHandler = null;

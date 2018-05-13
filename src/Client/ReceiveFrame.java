@@ -30,7 +30,6 @@ public class ReceiveFrame extends Thread {
         this.imageView = imageView;
         start();
     }
-    
 
     public void run() {
         try {

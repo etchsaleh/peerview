@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="PeerView.jnlp">
   <information>
@@ -16,3 +17,23 @@
   <jfx:javafx-desc  width="800" height="600" main-class="model.PeerView"  name="PeerView" />
   <update check="always"/>
 </jnlp>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="PeerView.jnlp">
+  <information>
+    <title>PeerView</title>
+    <vendor>HeshamSaleh</vendor>
+    <description>Remote Desktop Control</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="PeerView.jar" size="38532" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="PeerView" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="model.PeerView"  name="PeerView" />
+  <update check="always"/>
+</jnlp>
+>>>>>>> a4dc0d4a1e3e4feb3c0fa2f7d02aefdffd9a846d
