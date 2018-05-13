@@ -7,7 +7,7 @@
 package controller;
 
 import Client.ClientSocket;
-import Server.ConnectionInitiator;
+import Client.ConnectionInitiator;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -46,16 +46,22 @@ public class ClientViewController implements Initializable {
         @FXML
     private void submitBtnPressed(ActionEvent event) throws IOException {
         
-        ConnectionInitiator connInit = ConnectionInitiator.getInstance();
+        
         
         String serverIp = ipAddressTextField.getText();
+        String password = serverPasswordField.getText();
         
-        ClientSocket.getInstance(serverIp);
+        serverIp = "localhost";
+        
+        ConnectionInitiator connInit = ConnectionInitiator.getInstance(serverIp);
+        
         System.out.println(serverIp);
         
-        if(connInit.isConnected()) {
+        if(connInit.checkPassword(password)) {
             AnchorPane pane = FXMLLoader.load(ClientViewController.this.getClass().getResource("/view/ClientFramesView.fxml"));
             rootPane.getChildren().setAll(pane);
+        } else {
+            
         }
         
         

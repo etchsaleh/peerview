@@ -67,36 +67,38 @@ public class ServerViewController implements Initializable {
         String password = passwordTextField.getText();
         System.out.println("Password is " + password);
         
+        ConnectionInitiator connInit = ConnectionInitiator.getInstance(password);
+        connInit.initiateConnection();
+        
         //Awaiting Client connection.
         AnchorPane pane = FXMLLoader.load(ServerViewController.this.getClass().getResource("/view/ScreenView.fxml"));
         rootPane.getChildren().setAll(pane);
         
-        ConnectionInitiator connInit = ConnectionInitiator.getInstance(password);
         
-        connInit.initiateConnection();
         
-        if(connInit.isConnected()) {
-            // Minimize window, add 'end session btn'.
-            // Send Frames
-            try {
-                
-                GraphicsEnvironment gEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
-                GraphicsDevice gDev = gEnv.getDefaultScreenDevice();
-                
-                Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-                
-                Socket socket = new Socket();
-                Rectangle rect = new Rectangle(dim);
-                Robot robot = new Robot(gDev);
-                
-                // Sent frames should be recieved by ClientFramesViewController
-                new SendFrame(robot, rect);
-                
-            } catch (Exception ex) {
-                System.out.print(ex);
-            }
-        }
         
+//        if(connInit.isConnected()) {
+//            // Minimize window, add 'end session btn'.
+//            // Send Frames
+//            try {
+//                
+//                GraphicsEnvironment gEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
+//                GraphicsDevice gDev = gEnv.getDefaultScreenDevice();
+//                
+//                Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+//                
+//                Socket socket = new Socket();
+//                Rectangle rect = new Rectangle(dim);
+//                Robot robot = new Robot(gDev);
+//                
+//                // Sent frames should be recieved by ClientFramesViewController
+//                new SendFrame(robot, rect);
+//                
+//            } catch (Exception ex) {
+//                System.out.print(ex);
+//            }
+//        }
+//        
         //TO DO: password should be verified at client end. If true, minimize window, add 'end session btn
         
     }

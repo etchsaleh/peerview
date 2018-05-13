@@ -17,21 +17,30 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javax.imageio.ImageIO;
 
-public class ReceiveFrame extends Thread{
-    
-	public ReceiveFrame(){
-            start();
-	}
+public class ReceiveFrame extends Thread {
 
-	public void run(){
-            try{
-                while(true){
-                    BufferedImage image = ClientSocket.getInstance().getImage();
-                }
-            } catch(Exception ex) {
-                ex.printStackTrace();
+    private ImageView imageView;
+    
+    public ReceiveFrame(ImageView imageView) {
+        this.imageView = imageView;
+        start();
+    }
+    
+
+    public void run() {
+        try {
+            while (true) {
+                BufferedImage image = ClientSocket.getInstance().getImage();
+                WritableImage imageFx = SwingFXUtils.toFXImage(image, null);
+                this.imageView.setImage(imageFx);
             }
-	}
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

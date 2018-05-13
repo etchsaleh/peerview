@@ -6,7 +6,7 @@
 package controller;
 
 import Client.ReceiveFrame;
-import Server.ConnectionInitiator;
+import Client.ConnectionInitiator;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,19 +45,21 @@ public class ClientFramesViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        System.out.print("hola");
-        Image image = new Image(ClientFramesViewController.class.getResourceAsStream("smile.jpg"));
-        try{
-            imageView.setImage(image);
-        } catch (Exception ex) {
-            System.out.print(ex);
-        }
+//        System.out.print("hola");
+//        Image image = new Image(ClientFramesViewController.class.getResourceAsStream("smile.jpg"));
+//        try{
+//            imageView.setImage(image);
+//        } catch (Exception ex) {
+//            System.out.print(ex);
+//        }
+        ConnectionInitiator.getInstance().initializeStreaming(imageView);
+        
+        
         
         // Not sure lw di makanha el sa7, bas el mafrood el controller dah ye recieve el sent frames men
         // el serverViewController
-        new ReceiveFrame();
         
-        
+ 
         // Should display recieved frames in ClientFramesView.
         
         //TO DO: redesign the ClientFramesView.fxml

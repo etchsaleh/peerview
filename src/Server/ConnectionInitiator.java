@@ -18,7 +18,6 @@ public class ConnectionInitiator {
         this.serverPassword = serverPassword;
     }
     
-    
     public static ConnectionInitiator getInstance (String serverPassword) {
         if (instance == null) {
             instance = new ConnectionInitiator(serverPassword);
@@ -37,10 +36,18 @@ public class ConnectionInitiator {
         while(!auth.isValid()) {
             socket.sendMessage("invalid");
         }   
-        
         // auth valid
         socket.sendMessage("valid");
+        socket.sendMessage(getWidth());
+        socket.sendMessage(getHeight());
         connected = true;
+    }
+    
+    String getWidth() {
+        return "4";
+    }
+    String getHeight() {
+        return "5";
     }
     
     public Boolean isConnected () {
