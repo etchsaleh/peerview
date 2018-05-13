@@ -58,7 +58,7 @@ public class ServerViewController implements Initializable {
         System.out.println("Password is " + password);
         
        
-        ConnectionInitiator.getInstance(password).initiateConnection();
+//        ConnectionInitiator.getInstance(password).initiateConnection();
             //Awaiting Client connection.
         AnchorPane pane = FXMLLoader.load(ServerViewController.this.getClass().getResource("/view/ScreenView.fxml"));
         rootPane.getChildren().setAll(pane);

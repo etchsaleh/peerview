@@ -3,13 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Coding/Networks%20Project/peerview/src/Client/ClientSocket.java</file>
-            <file>file:/D:/Coding/Networks%20Project/peerview/src/Server/SendFrame.java</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/Client/EventSender.java</file>
             <file>file:/D:/Coding/Networks%20Project/peerview/src/Server/ServerSocket.java</file>
             <file>file:/D:/Coding/Networks%20Project/peerview/src/controller/ClientFramesViewController.java</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/Server/ConnectionInitiator.java</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/Client/MouseHandler.java</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/Client/ClientSocket.java</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/view/ScreenView.fxml</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/Server/SendFrame.java</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/view/ServerView.fxml</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/Client/KeyboardHandler.java</file>
             <file>file:/D:/Coding/Networks%20Project/peerview/src/controller/ClientViewController.java</file>
             <file>file:/D:/Coding/Networks%20Project/peerview/src/Client/ReceiveFrame.java</file>
-            <file>file:/D:/Coding/Networks%20Project/peerview/src/Server/ConnectionInitiator.java</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/controller/ServerViewController.java</file>
+            <file>file:/D:/Coding/Networks%20Project/peerview/src/Server/ReceiveEvents.java</file>
             <file>file:/D:/Coding/Networks%20Project/peerview/src/controller/StartViewController.java</file>
         </group>
     </open-files>

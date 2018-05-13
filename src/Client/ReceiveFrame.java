@@ -19,7 +19,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import javax.imageio.ImageIO;
 
-class ReceiveFrame extends Thread{
+class ReceiveFrame extends Thread {
     
 	public ReceiveFrame(){
             start();
