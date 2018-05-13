@@ -30,7 +30,7 @@ public class ScreenViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         
         Executors.newSingleThreadExecutor().execute(() -> {
             ConnectionInitiator connectInit = ConnectionInitiator.getInstance();

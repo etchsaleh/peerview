@@ -52,6 +52,7 @@ public class ClientFramesViewController implements Initializable {
 //        } catch (Exception ex) {
 //            System.out.print(ex);
 //        }
+
         ConnectionInitiator.getInstance().initializeStreaming(imageView);
         
         

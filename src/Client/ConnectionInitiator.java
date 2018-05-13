@@ -44,8 +44,7 @@ public class ConnectionInitiator {
        String height = socket.getMessage();
        System.out.println("Width " + width);
        System.out.println("Height " + height);
-       
-       //new ReceiveFrame(imageView);
+       new ReceiveFrame(imageView);
    }
    
 }

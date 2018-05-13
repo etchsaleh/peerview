@@ -1,13 +1,20 @@
 package Client;
 
-import java.awt.image.BufferedImage;
+
 import java.io.ByteArrayInputStream;
 import java.net.Socket;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import javafx.scene.image.Image;
+
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+
 import javax.imageio.ImageIO;
+
+
 
 
 
@@ -57,14 +64,7 @@ public class ClientSocket {
         }
     }
     
-    public void sendImage(BufferedImage image) {
-        try {
-            ImageIO.write(image, "png", socket.getOutputStream());
-        } catch (IOException e) {
-            
-        }
-    }
-    
+   
     public String getMessage() {
         try {
             return inputStream.readUTF();
@@ -79,12 +79,14 @@ public class ClientSocket {
             int count = 0;
             do {
 		count+= socket.getInputStream().read(bytes, count, bytes.length - count);
-            } while(!(count > 4 && bytes[count - 2] == (byte) - 1 && bytes[count - 1] == (byte) - 39));
+                System.out.println("fag" + count);
+            } while(!(count > 4 && bytes[count - 2] == (byte) -1 && bytes[count - 1] == (byte) -39));
             
             BufferedImage image = ImageIO.read(new ByteArrayInputStream(bytes));
-            
+            System.out.println(image.getHeight());
             return image;
-        } catch (IOException e) {
+        } catch (Exception e) {
+            System.out.println(e);
             return null;
         }
     }
