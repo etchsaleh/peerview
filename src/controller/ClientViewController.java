@@ -6,7 +6,6 @@
  */
 package controller;
 
-import Client.ClientSocket;
 import Client.ConnectionInitiator;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -51,7 +50,7 @@ public class ClientViewController implements Initializable {
         String serverIp = ipAddressTextField.getText();
         String password = serverPasswordField.getText();
         
-        serverIp = "localhost";
+        //serverIp = "localhost";
         
         ConnectionInitiator connInit = ConnectionInitiator.getInstance(serverIp);
         

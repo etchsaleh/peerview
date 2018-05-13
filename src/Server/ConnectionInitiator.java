@@ -5,6 +5,10 @@
  */
 package Server;
 
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+
 
 public class ConnectionInitiator {
 
@@ -12,6 +16,8 @@ public class ConnectionInitiator {
     private ServerSocket socket;
     private String serverPassword;
     private Boolean connected = false;
+    
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
  
     private ConnectionInitiator(String serverPassword) {
         System.out.println("password");
@@ -41,14 +47,19 @@ public class ConnectionInitiator {
         socket.sendMessage("valid");
         socket.sendMessage(getWidth());
         socket.sendMessage(getHeight());
-        connected = true;
+        initiateFrameSending();
+    }
+    
+    void initiateFrameSending() {
+        Rectangle rect = new Rectangle(dim);
+        new SendFrame(rect);
     }
     
     String getWidth() {
-        return "4";
+        return Double.toString(dim.getWidth());
     }
     String getHeight() {
-        return "5";
+       return Double.toString(dim.getHeight());
     }
     
     public Boolean isConnected () {

@@ -57,7 +57,7 @@ public class ServerSocket {
     
     public void sendImage(BufferedImage image) {
         try {
-            ImageIO.write(image, "png", socket.getOutputStream());
+            ImageIO.write(image, "jpeg", socket.getOutputStream());
         } catch (IOException e) {
             
         }
@@ -71,19 +71,4 @@ public class ServerSocket {
         }
     }
     
-    public BufferedImage getImage() {
-        try {
-            byte[] bytes = new byte[1024 * 1024];
-            int count = 0;
-            do {
-		count+= socket.getInputStream().read(bytes, count, bytes.length - count);
-            } while(!(count > 4 && bytes[count - 2] == (byte) - 1 && bytes[count - 1] == (byte) - 39));
-            
-            BufferedImage image = ImageIO.read(new ByteArrayInputStream(bytes));
-            
-            return image;
-        } catch (IOException e) {
-            return null;
-        }
-    }
 }

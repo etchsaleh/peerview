@@ -29,7 +29,6 @@ public class ScreenViewController implements Initializable {
                 ConnectionInitiator connectInit = ConnectionInitiator.getInstance();
                 connectInit.initiateConnection();
                 
- 
             }
         });
         System.out.println("After Blocking");
