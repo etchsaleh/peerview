@@ -37,6 +37,8 @@ public class ConnectionInitiator {
         while(!auth.isValid()) {
             socket.sendMessage("invalid");
         }   
+        
+        // auth valid
         socket.sendMessage("valid");
         connected = true;
     }

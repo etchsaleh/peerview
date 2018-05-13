@@ -5,6 +5,8 @@
  */
 package controller;
 
+import Client.ReceiveFrame;
+import Server.ConnectionInitiator;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,13 +32,13 @@ import java.net.Socket;
  * @author Administrator
  */
 public class ClientFramesViewController implements Initializable {
-
+    
     @FXML
     private ImageView imageView;
     
     @FXML
     private AnchorPane rootPane;
-       
+    
     /**
      * Initializes the controller class.
      */
@@ -51,24 +53,37 @@ public class ClientFramesViewController implements Initializable {
             System.out.print(ex);
         }
         
-//        try {
-//        
-//            GraphicsEnvironment gEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
-//            GraphicsDevice gDev = gEnv.getDefaultScreenDevice();
-//
-//            Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-//
-//            Socket socket = new Socket();
-//            Rectangle rect = new Rectangle(dim);
-//            Robot robot = new Robot(gDev);
-//            
-//            
-//        
-//        } catch (Exception ex) {
-//            
-//        }
+        // Not sure lw di makanha el sa7, bas el mafrood el controller dah ye recieve el sent frames men
+        // el serverViewController
+        new ReceiveFrame();
         
         
-    }    
+        // Should display recieved frames in ClientFramesView.
+        
+        //TO DO: redesign the ClientFramesView.fxml
+        
+        
+        
+        
+        
+        
+        //recieve buffered image, new instance of reci frame set image(image) and send imageview
+        //        try {
+        //
+        //            GraphicsEnvironment gEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        //            GraphicsDevice gDev = gEnv.getDefaultScreenDevice();
+        //
+        //            Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        //
+        //            Socket socket = new Socket();
+        //            Rectangle rect = new Rectangle(dim);
+        //            Robot robot = new Robot(gDev);
+        //
+        //        } catch (Exception ex) {
+        //            System.out.print(ex);
+        //        }
+        
+        
+    }
     
 }
