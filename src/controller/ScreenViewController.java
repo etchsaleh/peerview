@@ -6,6 +6,7 @@
  */
 package controller;
 
+import Server.ConnectionInitiator;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -21,8 +22,11 @@ public class ScreenViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        // TODO
+       ConnectionInitiator connectInit = ConnectionInitiator.getInstance();
+       while (!connectInit.isConnected()) {
+       }
+       System.out.println("Server Says Connected");
+       
     }    
     
 }

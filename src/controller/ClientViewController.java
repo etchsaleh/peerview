@@ -6,6 +6,8 @@
  */
 package controller;
 
+import Client.ClientSocket;
+import Client.ConnectionInitiator;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -41,22 +43,33 @@ public class ClientViewController implements Initializable {
         // TODO
     }    
 
-    @FXML
+        @FXML
     private void submitBtnPressed(ActionEvent event) throws IOException {
         
-
-        AnchorPane pane = FXMLLoader.load(ClientViewController.this.getClass().getResource("/view/ClientFramesView.fxml"));
-        rootPane.getChildren().setAll(pane);
         
-//        ClientSocket.getInstance(serverIp);
-//        System.out.println(serverIp);
-//        
-//        
-//        if(ClientSocket.correctIP == true) {
-//            System.out.println("Established connection");
-//        } else {
-//            System.out.println("Failed to connect");
-//        }
+        
+        String serverIp = ipAddressTextField.getText();
+        String password = serverPasswordField.getText();
+        
+        serverIp = "localhost";
+        
+        ConnectionInitiator connInit = ConnectionInitiator.getInstance(serverIp);
+        
+        System.out.println(serverIp);
+        
+        if(connInit.checkPassword(password)) {
+            AnchorPane pane = FXMLLoader.load(ClientViewController.this.getClass().getResource("/view/ClientFramesView.fxml"));
+            rootPane.getChildren().setAll(pane);
+        } else {
+            
+        }
+        
+        
+        //        if(ClientSocket.correctIP == true) {
+        //            System.out.println("Established connection");
+        //        } else {
+        //            System.out.println("Failed to connect");
+        //        }
     }
     
 }

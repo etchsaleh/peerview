@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
@@ -21,3 +22,18 @@
         </group>
     </open-files>
 </project-private>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/HeshamSaleh/NetBeansProjects/peerview/src/Client/ReceiveFrame.java</file>
+            <file>file:/Users/HeshamSaleh/NetBeansProjects/peerview/src/Server/ConnectionInitiator.java</file>
+            <file>file:/Users/HeshamSaleh/NetBeansProjects/peerview/src/controller/ClientFramesViewController.java</file>
+            <file>file:/Users/HeshamSaleh/NetBeansProjects/peerview/src/controller/ServerViewController.java</file>
+            <file>file:/Users/HeshamSaleh/NetBeansProjects/peerview/src/controller/ClientViewController.java</file>
+        </group>
+    </open-files>
+</project-private>
+>>>>>>> ea2411db298dd39f7582ec6842cf30d302b93bfa

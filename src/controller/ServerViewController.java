@@ -1,8 +1,16 @@
 package controller;
 
 import Server.ConnectionInitiator;
+import Server.SendFrame;
+import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.Socket;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
@@ -46,23 +54,51 @@ public class ServerViewController implements Initializable {
         try {
             String ipAddress = InetAddress.getLocalHost().getHostAddress();
             ipAddressLbl.setText(ipAddress);
-            System.out.print(ipAddressLbl);
+            
+            System.out.print("IP: " + ipAddress + "\n");
+            
         } catch (UnknownHostException ex) {
             Logger.getLogger(ServerViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
-
+    }
+    
     @FXML
     private void setPasswordPressed(ActionEvent event) throws IOException {
         String password = passwordTextField.getText();
         System.out.println("Password is " + password);
         
-       
-//        ConnectionInitiator.getInstance(password).initiateConnection();
-            //Awaiting Client connection.
+        ConnectionInitiator connInit = ConnectionInitiator.getInstance(password);
+        connInit.initiateConnection();
+        
         AnchorPane pane = FXMLLoader.load(ServerViewController.this.getClass().getResource("/view/ScreenView.fxml"));
         rootPane.getChildren().setAll(pane);
-            
-         
+        
+        
+        
+        
+//        if(connInit.isConnected()) {
+//            // Minimize window, add 'end session btn'.
+//            // Send Frames
+//            try {
+//                
+//                GraphicsEnvironment gEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
+//                GraphicsDevice gDev = gEnv.getDefaultScreenDevice();
+//                
+//                Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+//                
+//                Socket socket = new Socket();
+//                Rectangle rect = new Rectangle(dim);
+//                Robot robot = new Robot(gDev);
+//                
+//                // Sent frames should be recieved by ClientFramesViewController
+//                new SendFrame(robot, rect);
+//                
+//            } catch (Exception ex) {
+//                System.out.print(ex);
+//            }
+//        }
+//        
+        //TO DO: password should be verified at client end. If true, minimize window, add 'end session btn
+        
     }
 }
