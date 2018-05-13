@@ -10,7 +10,11 @@ import Server.ConnectionInitiator;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
+import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -18,19 +22,27 @@ import javafx.fxml.Initializable;
  * @author HeshamSaleh
  */
 public class ScreenViewController implements Initializable {
+
+    @FXML
+    private Label awaitingConnLbl;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Executors.newSingleThreadExecutor().execute(new Runnable() {
-            @Override
-            public void run() {
-                ConnectionInitiator connectInit = ConnectionInitiator.getInstance();
-                connectInit.initiateConnection();
-                
-            }
+
+        
+        Executors.newSingleThreadExecutor().execute(() -> {
+            ConnectionInitiator connectInit = ConnectionInitiator.getInstance();
+            connectInit.initiateConnection();
+            
+            Platform.runLater(() -> {
+                Stage stage = (Stage) awaitingConnLbl.getScene().getWindow();
+                stage.close();
+            });
         });
+        
         System.out.println("After Blocking");
+        
     }
 }
