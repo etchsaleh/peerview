@@ -30,6 +30,8 @@ public class ScreenViewController implements Initializable {
     private AnchorPane rootPane;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

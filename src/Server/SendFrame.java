@@ -35,9 +35,7 @@ public class SendFrame extends Thread {
 	while(true){
             BufferedImage image = robot.createScreenCapture(rect);
             try {
-//                System.out.println("Try Send " + image.getHeight());
                 ServerSocket.getInstance().sendImage(image);
-//                System.out.println("Sent Image");
                 
             } catch(Exception ex){
                 ex.printStackTrace();

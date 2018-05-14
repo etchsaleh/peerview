@@ -7,7 +7,6 @@ package Client;
 
 import java.io.IOException;
 import javafx.scene.image.ImageView;
-import org.omg.CORBA.DoubleHolder;
 
 /**
  *

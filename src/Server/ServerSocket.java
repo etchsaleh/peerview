@@ -6,14 +6,11 @@
 package Server;
 
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.net.Socket;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-//import java.net.ServerSocket;
-
 
 
 /**
@@ -36,7 +33,7 @@ public class ServerSocket {
             System.out.println("Accept finished");
             inputStream = new DataInputStream(socket.getInputStream());
             outputStream = new DataOutputStream(socket.getOutputStream());
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
     }

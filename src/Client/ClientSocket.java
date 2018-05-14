@@ -8,7 +8,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 
@@ -50,9 +49,6 @@ public class ClientSocket {
     }
 
     public static ClientSocket getInstance() {
-//        if (instance == null) {
-//            throw new Exception("No instance yet");
-//        }
         return instance;
     }
     
