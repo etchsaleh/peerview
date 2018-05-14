@@ -30,11 +30,11 @@ public class ReceiveFrame extends Thread {
         
         try {
             while (true) {
-              System.out.println("In Image loop");
+//              System.out.println("In Image loop");
               BufferedImage image = ClientSocket.getInstance().getImage();  
-              System.out.println("In Image loop 2");
+//              System.out.println("In Image loop 2");
               WritableImage imageFx = SwingFXUtils.toFXImage(image, null);
-              System.out.println("In Image loop 3");
+//              System.out.println("In Image loop 3");
               this.imageView.setImage(imageFx);
             }
         } catch (Exception ex) {

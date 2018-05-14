@@ -7,6 +7,7 @@ package Client;
 
 import java.io.IOException;
 import javafx.scene.image.ImageView;
+import org.omg.CORBA.DoubleHolder;
 
 /**
  *
@@ -45,6 +46,7 @@ public class ConnectionInitiator {
        System.out.println("Width " + width);
        System.out.println("Height " + height);
        new ReceiveFrame(imageView);
+       new EventSender(imageView, Double.parseDouble(width), Double.parseDouble(height));
    }
    
 }

@@ -79,11 +79,11 @@ public class ClientSocket {
             int count = 0;
             do {
 		count+= socket.getInputStream().read(bytes, count, bytes.length - count);
-                System.out.println("fag" + count);
+                
             } while(!(count > 4 && bytes[count - 2] == (byte) -1 && bytes[count - 1] == (byte) -39));
             
             BufferedImage image = ImageIO.read(new ByteArrayInputStream(bytes));
-            System.out.println(image.getHeight());
+            
             return image;
         } catch (Exception e) {
             System.out.println(e);

@@ -53,6 +53,7 @@ public class ConnectionInitiator {
     void initiateFrameSending() {
         Rectangle rect = new Rectangle(dim);
         new SendFrame(rect);
+        new ReceiveEvents();
     }
     
     String getWidth() {
